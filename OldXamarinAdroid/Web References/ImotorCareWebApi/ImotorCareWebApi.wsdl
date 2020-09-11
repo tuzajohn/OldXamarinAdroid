@@ -1,0 +1,531 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAll">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllResult" type="tns:ArrayOfPersonel_table" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPersonel_table">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Personel_table" nillable="true" type="tns:Personel_table" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Personel_table">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Personel_table_support">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Fname" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Lname" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Longitude" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Lattitude" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Garage_name" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Garage_address" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Speciality" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Contact" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Type" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Image" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Byte_image" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="Personel_table_support" />
+      <s:element name="GetAllFromType">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllFromTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllFromTypeResult" type="tns:ArrayOfPersonel_table" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchForSpeciality">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="speciality" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="longitude" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="latitude" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="range" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchForSpecialityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchForSpecialityResult" type="tns:ArrayOfPersonel_rating_view" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPersonel_rating_view">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Personel_rating_view" nillable="true" type="tns:Personel_rating_view" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Personel_rating_view">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Personel_rating_view_support">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Personel_name" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Garage_details" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Longitude" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Lattitude" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Image" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Byte_image" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Contact" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Type" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Speciality" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Comment" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TotalStars1" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="Personel_rating_view_support" />
+      <s:element name="GetAllFromTypeWithDistance">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="longitude" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="latitude" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="range" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllFromTypeWithDistanceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllFromTypeWithDistanceResult" type="tns:ArrayOfPersonel_table" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPersonelByID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPersonelByIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPersonelByIDResult" type="tns:Personel_table" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePersonel">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="garage" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="speciality" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="longitude" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="latitude" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePersonelResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdatePersonelResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDataSet">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetDataSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDataSetResult" type="tns:ArrayOfSetClass" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfSetClass">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="SetClass" nillable="true" type="tns:SetClass" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SetClass">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Key" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="WordList" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RatePersonel">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="comment" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="numberOfStars" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RatePersonelResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RatePersonelResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Personel_Ratings">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Personel_RatingsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Personel_RatingsResult" type="tns:ArrayOfRating_table" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfRating_table">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Rating_table" nillable="true" type="tns:Rating_table" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Rating_table">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Rating_table_support">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Id" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Personelid" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Stars" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Comment" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="Rating_table_support" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAll" />
+  </wsdl:message>
+  <wsdl:message name="GetAllSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllFromTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllFromType" />
+  </wsdl:message>
+  <wsdl:message name="GetAllFromTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllFromTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchForSpecialitySoapIn">
+    <wsdl:part name="parameters" element="tns:SearchForSpeciality" />
+  </wsdl:message>
+  <wsdl:message name="SearchForSpecialitySoapOut">
+    <wsdl:part name="parameters" element="tns:SearchForSpecialityResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllFromTypeWithDistanceSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllFromTypeWithDistance" />
+  </wsdl:message>
+  <wsdl:message name="GetAllFromTypeWithDistanceSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllFromTypeWithDistanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPersonelByIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPersonelByID" />
+  </wsdl:message>
+  <wsdl:message name="GetPersonelByIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPersonelByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePersonelSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdatePersonel" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePersonelSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdatePersonelResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDataSetSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetDataSetSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDataSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="RatePersonelSoapIn">
+    <wsdl:part name="parameters" element="tns:RatePersonel" />
+  </wsdl:message>
+  <wsdl:message name="RatePersonelSoapOut">
+    <wsdl:part name="parameters" element="tns:RatePersonelResponse" />
+  </wsdl:message>
+  <wsdl:message name="Personel_RatingsSoapIn">
+    <wsdl:part name="parameters" element="tns:Personel_Ratings" />
+  </wsdl:message>
+  <wsdl:message name="Personel_RatingsSoapOut">
+    <wsdl:part name="parameters" element="tns:Personel_RatingsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ImotorCareWebApiSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAll">
+      <wsdl:input message="tns:GetAllSoapIn" />
+      <wsdl:output message="tns:GetAllSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllFromType">
+      <wsdl:input message="tns:GetAllFromTypeSoapIn" />
+      <wsdl:output message="tns:GetAllFromTypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchForSpeciality">
+      <wsdl:input message="tns:SearchForSpecialitySoapIn" />
+      <wsdl:output message="tns:SearchForSpecialitySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllFromTypeWithDistance">
+      <wsdl:input message="tns:GetAllFromTypeWithDistanceSoapIn" />
+      <wsdl:output message="tns:GetAllFromTypeWithDistanceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonelByID">
+      <wsdl:input message="tns:GetPersonelByIDSoapIn" />
+      <wsdl:output message="tns:GetPersonelByIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePersonel">
+      <wsdl:input message="tns:UpdatePersonelSoapIn" />
+      <wsdl:output message="tns:UpdatePersonelSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataSet">
+      <wsdl:input message="tns:GetDataSetSoapIn" />
+      <wsdl:output message="tns:GetDataSetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RatePersonel">
+      <wsdl:input message="tns:RatePersonelSoapIn" />
+      <wsdl:output message="tns:RatePersonelSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Personel_Ratings">
+      <wsdl:input message="tns:Personel_RatingsSoapIn" />
+      <wsdl:output message="tns:Personel_RatingsSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ImotorCareWebApiSoap" type="tns:ImotorCareWebApiSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAll">
+      <soap:operation soapAction="http://tempuri.org/GetAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllFromType">
+      <soap:operation soapAction="http://tempuri.org/GetAllFromType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchForSpeciality">
+      <soap:operation soapAction="http://tempuri.org/SearchForSpeciality" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllFromTypeWithDistance">
+      <soap:operation soapAction="http://tempuri.org/GetAllFromTypeWithDistance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonelByID">
+      <soap:operation soapAction="http://tempuri.org/GetPersonelByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePersonel">
+      <soap:operation soapAction="http://tempuri.org/UpdatePersonel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataSet">
+      <soap:operation soapAction="http://tempuri.org/GetDataSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RatePersonel">
+      <soap:operation soapAction="http://tempuri.org/RatePersonel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Personel_Ratings">
+      <soap:operation soapAction="http://tempuri.org/Personel_Ratings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ImotorCareWebApiSoap12" type="tns:ImotorCareWebApiSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAll">
+      <soap12:operation soapAction="http://tempuri.org/GetAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllFromType">
+      <soap12:operation soapAction="http://tempuri.org/GetAllFromType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchForSpeciality">
+      <soap12:operation soapAction="http://tempuri.org/SearchForSpeciality" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllFromTypeWithDistance">
+      <soap12:operation soapAction="http://tempuri.org/GetAllFromTypeWithDistance" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPersonelByID">
+      <soap12:operation soapAction="http://tempuri.org/GetPersonelByID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePersonel">
+      <soap12:operation soapAction="http://tempuri.org/UpdatePersonel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataSet">
+      <soap12:operation soapAction="http://tempuri.org/GetDataSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RatePersonel">
+      <soap12:operation soapAction="http://tempuri.org/RatePersonel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Personel_Ratings">
+      <soap12:operation soapAction="http://tempuri.org/Personel_Ratings" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ImotorCareWebApi">
+    <wsdl:port name="ImotorCareWebApiSoap" binding="tns:ImotorCareWebApiSoap">
+      <soap:address location="http://10.150.35.240:8005/ImotorCareWebApi.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ImotorCareWebApiSoap12" binding="tns:ImotorCareWebApiSoap12">
+      <soap12:address location="http://10.150.35.240:8005/ImotorCareWebApi.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

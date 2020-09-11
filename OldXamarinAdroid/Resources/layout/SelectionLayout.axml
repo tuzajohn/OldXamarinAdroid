@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<RelativeLayout
+        android:layout_width="297dp"
+        android:layout_height="275dp"
+        android:layout_centerInParent="true"
+        android:background="#FEFFFF"
+        android:gravity="center">
+
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:text="Do You Need a Mechanic or Breakdown Service Provider?"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textSize="15sp"
+            android:textColor="#0C090A"
+            android:textStyle="bold"
+            android:fontFamily="serif"
+            android:layout_alignParentLeft="true" />
+
+        <ImageView
+            android:id="@+id/imageMechan"
+            android:layout_width="84dp"
+            android:layout_height="84dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_below="@+id/textView"
+            android:src="@drawable/mech" />
+
+        <ImageView
+            android:id="@+id/imageBreak"
+            android:layout_width="84dp"
+            android:layout_height="84dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignRight="@+id/imageMechan"
+            android:layout_below="@+id/textView"
+            android:src="@drawable/breakdown"
+            android:layout_alignEnd="@+id/imageMechan"
+            android:layout_alignParentEnd="true" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="123dp"
+            android:gravity="center"
+            android:text="Briefly describe your problem below for us to help you find an appropriape service provider"
+            android:textAlignment="gravity"
+            android:textSize="12sp"
+            android:textColor="#808080"
+            android:textStyle="normal"
+            android:typeface="normal"
+            android:fontFamily="serif"
+            android:layout_alignParentLeft="true" />
+
+        <EditText
+            android:id="@+id/specialityText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="52dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="Type Here"
+            android:textColorHint="#D1D0CE"
+            android:gravity="center"/>
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="130dp"
+            android:layout_height="36dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:backgroundTint="@color/colorPrimary"
+            android:text="Find"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:typeface="sans" />
+
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:lineSpacingExtra="0.5sp"
+        android:text="@string/copyright"
+        android:textColor="#a9a9a9"
+        android:textSize="11sp"
+        android:typeface="monospace"
+        android:gravity="center"/>
+</RelativeLayout>

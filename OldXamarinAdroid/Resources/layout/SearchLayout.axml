@@ -7,27 +7,18 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/activity_main">
 
-	<ProgressBar
+<ProgressBar
 		style="?android:attr/progressBarStyleHorizontal"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:id="@+id/progressBar"
+		android:id="@+id/progressBarSearch"
 		android:indeterminate="true" />
-	<SeekBar
-		android:layout_width="match_parent" 
-		android:layout_height="wrap_content"
-        android:paddingTop="20dp"
-        android:paddingBottom="20dp"
-		android:max="10"
-		android:theme="@style/Widget.AppCompat.SeekBar.Discrete"
-		android:id="@+id/seekbar"/>  
 
   <ListView
-        android:id="@+id/listView"
+        android:id="@+id/listViewSearch"
         android:divider="@null"
         android:dividerHeight="0dp"
-        android:paddingTop="20dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-  
+        android:layout_height="match_parent"/>
+
 </RelativeLayout>
